@@ -43,7 +43,7 @@ GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-pro")
 RETRIEVAL_K = int(os.getenv("RETRIEVAL_K", 3))
 
 # Validate API key
-if not GOOGLE_API_KEY or GOOGLE_API_KEY == "":
+if not GOOGLE_API_KEY or GOOGLE_API_KEY == "GOOGLE_API_KEY":
     raise ValueError(
         "❌ GOOGLE_API_KEY not found in .env file!\n"
         "Get your free API key from: https://makersuite.google.com/app/apikey\n"
