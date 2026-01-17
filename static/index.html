@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAST NUCES Chatbot - RAG Powered</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🎓 FAST NUCES Islamabad</h1>
+                <p>AI-Powered University Assistant</p>
+                <div class="tech-badge">
+                    <span class="badge">RAG</span>
+                    <span class="badge">Gemini</span>
+                    <span class="badge">LangChain</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <!-- Messages Area -->
+            <div class="messages" id="messages">
+                <!-- Welcome message -->
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            <strong>Hello! I'm your FAST NUCES assistant. 👋</strong>
+                            <p>I can help you with questions about:</p>
+                            <ul>
+                                <li>📝 Admissions & Eligibility</li>
+                                <li>💰 Fee Structure & Scholarships</li>
+                                <li>🎓 Programs & Departments</li>
+                                <li>📚 Library & Facilities</li>
+                                <li>🏠 Hostel Information</li>
+                                <li>📞 Contact Details</li>
+                            </ul>
+                            <p>Ask me anything!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Questions -->
+            <div class="quick-questions" id="quickQuestions">
+                <button class="quick-btn" onclick="sendQuickQuestion('What are the admission requirements?')">
+                    📝 Admission Requirements
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuestion('What is the fee structure?')">
+                    💰 Fee Structure
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuestion('Tell me about scholarships')">
+                    🏆 Scholarships
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuestion('What programs are offered?')">
+                    🎓 Programs Offered
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuestion('Library timings and facilities')">
+                    📚 Library Info
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuestion('How can I contact the university?')">
+                    📞 Contact Info
+                </button>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <form id="chatForm" onsubmit="sendMessage(event)">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Ask me anything about FAST NUCES..."
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" id="sendBtn">
+                        <span id="sendIcon">📤</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                🤖 Powered by <strong>RAG (Retrieval Augmented Generation)</strong> | 
+                Using Google Gemini + LangChain + FAISS
+            </p>
+            <p class="disclaimer">
+                ⚠️ AI-generated responses. For official information, visit 
+                <a href="https://www.nu.edu.pk" target="_blank">www.nu.edu.pk</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Loading Indicator (hidden by default) -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Generating answer...</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
